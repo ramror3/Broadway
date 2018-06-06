@@ -1,2 +1,10 @@
 <h1>Edit Broad Way</h1>
-<%= render 'form' %>
+
+<%= simple_form_for @play, html: {multipart: true} do |f| %>
+  <%= f.file_field :play_img %>
+  <%= f.select :category_id, @categories %>
+  <%= f.input :title, label: "Play Title" %>
+  <%= f.input :description %>
+  <%= f.input :director %>
+  <%= f.button :submit %>
+<% end %>
